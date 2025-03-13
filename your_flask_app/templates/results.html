@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('/static/bg.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 50px;
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .dataframe {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .dataframe th, .dataframe td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        .dataframe th {
+            background-color: #f2f2f2;
+        }
+        .accuracy {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Analiz Sonuçları</h1>
+        <div class="accuracy">
+            <p>Model: {{ model_choice }}</p>
+            <p>Doğruluk Oranı: {{ accuracy }}</p>
+        </div>
+        {{ tables | safe }}
+    </div>
+</body>
+</html>
+
+
+
